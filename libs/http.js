@@ -1,9 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
-
 import {translate} from './translate';
 import {setError} from "../actions/error";
-
 import store from "../store";
 
 class Http {

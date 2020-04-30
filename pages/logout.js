@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
-import {AccountWrapper} from "../components/Helpers/AccountWrapper";
-
 import {useRouter} from "next/router";
+
+import {AccountWrapper} from "../components/Helpers/AccountWrapper";
 
 function Logout(props) {
     const router = useRouter();

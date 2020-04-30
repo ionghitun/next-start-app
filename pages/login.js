@@ -1,11 +1,12 @@
 import React, {Fragment, useEffect, useState} from 'react';
-import AuthCard from "../components/Reusable/AuthCard";
-import {translate} from "../libs/translate";
 import {Alert, Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import Link from 'next/link';
-import {AccountWrapper} from "../components/Helpers/AccountWrapper";
 import {useRouter} from "next/router";
-import Head from "next/head";
+
+import AuthCard from "../components/Reusable/AuthCard";
+import {translate} from "../libs/translate";
+import {AccountWrapper} from "../components/Helpers/AccountWrapper";
+import Meta from "../components/Helpers/Meta";
 
 function Login(props) {
     const router = useRouter();
@@ -56,10 +57,7 @@ function Login(props) {
     }
 
     return <Fragment>
-        <Head>
-            <title>Login</title>
-            <link rel="icon" href="/favicon.ico"/>
-        </Head>
+        <Meta title={translate('login.metaTitle')}/>
         <AuthCard title={translate('login.title')}>
             {loginErrors && loginErrors.account && <Alert color={'warning'}>{loginErrors.account}</Alert>}
             {loginErrors && loginErrors.credentials && <Alert color={'danger'}>{loginErrors.credentials}</Alert>}

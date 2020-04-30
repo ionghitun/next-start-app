@@ -1,14 +1,13 @@
 import React, {Fragment, useEffect, useState} from 'react';
+import {Alert, Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+
 import AuthCard from "../components/Reusable/AuthCard";
 import {translate} from "../libs/translate";
-import {Alert, Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
-
-import Link from 'next/link';
 import http from "../libs/http";
 import {AccountWrapper} from "../components/Helpers/AccountWrapper";
-import Head from "next/head";
-
-import {useRouter} from 'next/router';
+import Meta from "../components/Helpers/Meta";
 
 function Register(props) {
     const router = useRouter();
@@ -217,10 +216,7 @@ function Register(props) {
     }
 
     return <Fragment>
-        <Head>
-            <title>Register</title>
-            <link rel="icon" href="/favicon.ico"/>
-        </Head>
+        <Meta title={translate('register.metaTitle')}/>
         <AuthCard title={translate('register.title')}>
             {!showCode && _renderMain()}
             {showCode && _renderCode()}

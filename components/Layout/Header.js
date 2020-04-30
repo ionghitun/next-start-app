@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import Link from 'next/link';
+
 import {translate} from "../../libs/translate";
 
 const mapStateToProps = function (store) {

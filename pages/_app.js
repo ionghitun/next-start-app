@@ -1,14 +1,12 @@
 import React, {useEffect} from "react";
 import {Provider} from 'react-redux';
 import withRedux from 'next-redux-wrapper';
-import store from '../store';
+import moment from "moment";
 
 import {onResize} from '../actions/responsive';
 import {getLanguages} from "../actions/languages";
 import {getTranslation} from "../actions/translation";
-
-import moment from "moment";
-
+import store from '../store';
 import '../resources/styles/app.scss';
 
 function MyApp(props) {

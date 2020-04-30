@@ -1,15 +1,13 @@
 import React, {Fragment, useEffect, useState} from 'react';
+import {Alert, Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
+import {useRouter} from 'next/router';
+import Link from 'next/link';
+
 import AuthCard from "../components/Reusable/AuthCard";
 import {translate} from "../libs/translate";
-import {Alert, Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
-
-import {useRouter} from 'next/router';
-
-import Link from 'next/link';
-import http from "../libs/http";
-
 import {AccountWrapper} from "../components/Helpers/AccountWrapper";
-import Head from "next/head";
+import http from "../libs/http";
+import Meta from "../components/Helpers/Meta";
 
 function ForgotPassword(props) {
     const router = useRouter();
@@ -176,10 +174,7 @@ function ForgotPassword(props) {
     }
 
     return <Fragment>
-        <Head>
-            <title>Forgot Password</title>
-            <link rel="icon" href="/favicon.ico"/>
-        </Head>
+        <Meta title={translate('forgotPassword.metaTitle')}/>
         <AuthCard title={translate('forgotPassword.title')}>
             {!showCode && _renderMain()}
             {showCode && _renderCode()}
